@@ -1,5 +1,5 @@
-import dbConnect from '../../lib/dbConnect';
-import Movie from '../../models/Movie';
+import dbConnect from '../../../lib/dbConnect';
+import Book from '../../../models/Book';
 
 export default async function handler(req, res) {
     await dbConnect();
@@ -7,12 +7,12 @@ export default async function handler(req, res) {
     if (req.method === 'POST') {
         try {
             const { name, tags } = req.body;
-            const newMovie = new Movie({ name, tags });
-            await newMovie.save();
-            res.status(201).json({ success: true, data: newMovie });
+            const newBook = new Book({ name, tags });
+            await newBook.save();
+            res.status(201).json({ success: true, data: newBook });
         } catch (error) {
             console.error(error); // Log the error
-            res.status(400).json({ success: false, message: 'Error adding movie', error: error.message });
+            res.status(400).json({ success: false, message: 'Error adding book', error: error.message });
         }
     } else {
         res.status(405).json({ success: false, message: 'Method not allowed' });

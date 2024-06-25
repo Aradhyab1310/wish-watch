@@ -1,7 +1,7 @@
 // import aos, bootsrap, and icons later to design the page
 import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/app/components/sections/header";
+import "../../src/app/globals.css";
+import Header from "../../pages/components/sections/header";
 
 
 
