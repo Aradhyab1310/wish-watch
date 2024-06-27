@@ -1,4 +1,4 @@
-import NavMenu from "@/app/components/sections/navMenu"
+import NavMenu from "./navMenu"
 export default function Header() {
     return (
         <div>
